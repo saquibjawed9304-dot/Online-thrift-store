@@ -1,0 +1,21 @@
+<div id="page-login" class="page">
+  <div class="auth-page">
+    <div class="auth-box">
+      <div style="text-align:center;font-size:40px;margin-bottom:12px">👕</div>
+      <h2>Welcome Back</h2>
+      <p>Login to your ThriftHub account to start shopping</p>
+      <div class="input-group">
+        <label>Email Address</label>
+        <input id="login-email" type="email" placeholder="yourname@gmail.com" oninput="vGmail('login-email','le-err')">
+        <span class="field-err" id="le-err"></span>
+      </div>
+      <div class="input-group">
+        <label>Password</label>
+        <input id="login-password" type="password" placeholder="Enter your password" oninput="vPass('login-password','lp-err')">
+        <span class="field-err" id="lp-err"></span>
+      </div>
+      <button class="auth-btn" id="login-btn" onclick="doLogin()">Login to ThriftHub</button>
+      <div class="auth-switch">Don't have an account? <a onclick="goTo('signup')">Create one here</a></div>
+    </div>
+  </div>
+</div>

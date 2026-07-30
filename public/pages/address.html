@@ -1,0 +1,70 @@
+<div id="page-address" class="page">
+  <div class="page-title">Delivery Address 📦</div>
+  <div class="address-form">
+
+    <!-- Saved addresses -->
+    <div id="saved-addresses-section" style="display:none">
+      <h3>Saved Addresses</h3>
+      <div id="saved-addresses-list" style="margin:12px 0 20px"></div>
+      <a onclick="toggleNewAddressForm()" style="color:#c8a96e;cursor:pointer;font-size:13px;font-weight:600">+ Add New Address</a>
+      <hr style="margin:16px 0;border-color:#eee">
+    </div>
+
+    <!-- New / Edit address form -->
+    <div id="new-address-form">
+      <h3>Enter Delivery Details</h3>
+      <div class="form-row" style="margin-top:16px">
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input id="addr-name" type="text" placeholder="Recipient name">
+        </div>
+        <div class="form-group">
+          <label>Phone Number *</label>
+          <input id="addr-phone" type="tel" placeholder="+91 XXXXXXXXXX">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>House / Flat / Building *</label>
+        <input id="addr-street" type="text" placeholder="e.g. Flat 4B, Sunshine Apartments">
+      </div>
+      <div class="form-group">
+        <label>Area / Locality</label>
+        <input id="addr-area" type="text" placeholder="e.g. Koregaon Park">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>City *</label>
+          <input id="addr-city" type="text" placeholder="City">
+        </div>
+        <div class="form-group">
+          <label>State *</label>
+          <select id="addr-state">
+            <option value="">Select State</option>
+            <option>Andhra Pradesh</option><option>Assam</option><option>Bihar</option>
+            <option>Delhi</option><option>Goa</option><option>Gujarat</option>
+            <option>Haryana</option><option>Himachal Pradesh</option><option>Jharkhand</option>
+            <option>Karnataka</option><option>Kerala</option><option>Madhya Pradesh</option>
+            <option>Maharashtra</option><option>Manipur</option><option>Meghalaya</option>
+            <option>Odisha</option><option>Punjab</option><option>Rajasthan</option>
+            <option>Tamil Nadu</option><option>Telangana</option><option>Uttar Pradesh</option>
+            <option>Uttarakhand</option><option>West Bengal</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Pincode *</label>
+          <input id="addr-pin" type="text" placeholder="6-digit pincode" maxlength="6">
+        </div>
+        <div class="form-group">
+          <label>Address Type</label>
+          <select id="addr-type">
+            <option>Home</option><option>Work</option><option>Other</option>
+          </select>
+        </div>
+      </div>
+      <span id="addr-error" style="color:#e05252;font-size:13px;display:block;margin-bottom:10px"></span>
+      <button onclick="saveAndProceed()" style="width:100%;padding:13px;font-size:15px;font-weight:600;border-radius:8px">Save &amp; Proceed to Payment →</button>
+    </div>
+  </div>
+</div>

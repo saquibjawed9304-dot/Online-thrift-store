@@ -1,0 +1,26 @@
+<div id="page-signup" class="page">
+  <div class="auth-page">
+    <div class="auth-box">
+      <div style="text-align:center;font-size:40px;margin-bottom:12px">✨</div>
+      <h2>Create Account</h2>
+      <p>Join ThriftHub and discover amazing vintage finds</p>
+      <div class="input-group">
+        <label>Full Name</label>
+        <input id="reg-name" type="text" placeholder="Your full name" oninput="vName('reg-name','rn-err')">
+        <span class="field-err" id="rn-err"></span>
+      </div>
+      <div class="input-group">
+        <label>Email Address (Gmail only)</label>
+        <input id="reg-email" type="email" placeholder="yourname@gmail.com" oninput="vGmail('reg-email','re-err')">
+        <span class="field-err" id="re-err"></span>
+      </div>
+      <div class="input-group">
+        <label>Password (min 6 characters)</label>
+        <input id="reg-password" type="password" placeholder="Create a strong password" oninput="vPass('reg-password','rp-err')">
+        <span class="field-err" id="rp-err"></span>
+      </div>
+      <button class="auth-btn" id="signup-btn" onclick="doSignup()">Create Account</button>
+      <div class="auth-switch">Already have an account? <a onclick="goTo('login')">Login here</a></div>
+    </div>
+  </div>
+</div>

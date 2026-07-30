@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THRIFTHUB | Premium Vintage Thrift</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Global UI Elements -->
+<div id="auth-guard"></div>
+<div id="ajax-loader">
+  <div class="spinner"></div>
+  <p style="color:#888;font-size:13px">Loading ThriftHub...</p>
+</div>
+<div class="notif" id="notif"></div>
+
+<!-- HEADER EXTERNALIZED -->
+<header>
+  <div class="logo" onclick="goTo('home')">THRIFTHUB</div>
+  <nav>
+    <ul>
+      <li><span onclick="requireLogin('men')">Men</span>
+        <div class="dropdown">
+          <span onclick="requireLogin('tshirts')">T-Shirts &amp; Shirts</span>
+          <span onclick="requireLogin('hoodies')">Hoodies &amp; Knitwear</span>
+          <span onclick="requireLogin('jackets')">Jackets</span>
+          <span onclick="requireLogin('bottoms')">Bottoms</span>
+        </div></li>
+      <li><span onclick="requireLogin('women')">Women</span>
+        <div class="dropdown">
+          <span onclick="requireLogin('wtshirts')">Tops &amp; T-Shirts</span>
+          <span onclick="requireLogin('whoodies')">Hoodies &amp; Knitwear</span>
+          <span onclick="requireLogin('wjackets')">Jackets</span>
+          <span onclick="requireLogin('wdresses')">Dresses</span>
+          <span onclick="requireLogin('wbottoms')">Bottoms</span>
+        </div></li>
+      <li><span onclick="requireLogin('brands')">Brands</span>
+        <div class="dropdown">
+          <span onclick="requireLogin('nike')">Nike</span>
+          <span onclick="requireLogin('adidas')">Adidas</span>
+          <span onclick="requireLogin('carhartt')">Carhartt</span>
+          <span onclick="requireLogin('levis')">Levi's</span>
+          <span onclick="requireLogin('puma')">Puma</span>
+          <span onclick="requireLogin('tommy')">Tommy</span>
+          <span onclick="requireLogin('champion')">Champion</span>
+        </div></li>
+      <li><span onclick="requireLogin('style')">Style</span>
+        <div class="dropdown">
+          <span onclick="requireLogin('y2k')">Y2K</span>
+          <span onclick="requireLogin('festival')">Festival</span>
+          <span onclick="requireLogin('premium')">Premium</span>
+        </div></li>
+      <li><span onclick="requireLogin('outlet')">Outlet</span></li>
+      <li><span onclick="requireLogin('stores')">Stores</span></li>
+    </ul>
+  </nav>
+  <div class="header-right">
+    <input class="search-box" placeholder="🔍 Search" onclick="requireLogin('search')" readonly>
+    <span class="hbtn" id="account-btn" onclick="handleAccountClick()">👤 Account</span>
+    <span class="hbtn" onclick="requireLogin('wishlist')">🤍 Wishlist <span class="wl-badge" id="wishlist-count">0</span></span>
+    <span class="hbtn" onclick="requireLogin('cart')">🛒 Cart <span class="cart-badge" id="cart-count">0</span></span>
+  </div>
+</header>
+
+<!-- MAIN APP CONTAINER (Fragments load here) -->
+<main id="app-content"></main>
+
+<!-- SCRIPTS -->
+<script src="js/app.js?v=2"></script>
+</body>
+</html>

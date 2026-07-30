@@ -1,0 +1,17 @@
+<div id="page-product-detail" class="page">
+  <div class="back-link"><a onclick="goTo(lastPage||'men')" id="detail-back">← Back</a></div>
+  <div class="product-container">
+    <div class="product-image"><img id="d-img" src="" alt="product" onerror="this.src='https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500&auto=format'"></div>
+    <div class="product-info">
+      <span id="d-badge" style="display:inline-block;padding:3px 10px;border-radius:10px;font-size:11px;font-weight:700;text-transform:uppercase;margin-bottom:8px"></span>
+      <h2 id="d-name"></h2>
+      <div class="price-detail"><span id="d-orig" class="orig"></span><span id="d-price" class="sale"></span><span id="d-disc" class="badge"></span></div>
+      <p id="d-meta" style="color:#888;font-size:12px;margin-bottom:10px"></p>
+      <label style="font-size:12px;font-weight:600">Select Size</label><br>
+      <select class="size-select" id="d-sizes"></select><br>
+      <div id="d-qty-container" style="margin: 10px 0;"></div>
+      <button class="add-to-cart-btn" id="d-cart-btn">Add to Cart 🛒</button>
+      <div class="description"><h3 style="font-size:14px;margin-bottom:6px">Description</h3><p id="d-desc" style="font-size:13px"></p></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,107 @@
+<div id="page-add-product" class="page">
+  <div class="page-title">List Your Vintage Treasure 💎</div>
+  <p style="text-align:center;color:var(--text-muted);margin-bottom:30px;font-size:14px">Your curation helps the community thrive.</p>
+  
+  <div style="max-width:680px;margin:0 auto;padding:0 20px 80px">
+    <div style="background:var(--white);border:1px solid var(--glass-border);border-radius:32px;padding:48px;box-shadow:0 30px 60px rgba(0,0,0,0.08);backdrop-filter:blur(20px)">
+      
+      <!-- Image Upload Preview Section -->
+      <div style="margin-bottom:40px;text-align:center">
+        <div id="prod-img-preview" style="width:180px;height:180px;background:#faf9f6;border-radius:28px;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;overflow:hidden;border:2px dashed var(--primary-glow);box-shadow:inset 0 4px 10px rgba(0,0,0,0.02);transition:0.4s ease">
+          <div style="text-align:center">
+            <span style="display:block;font-size:32px;margin-bottom:8px">🖼️</span>
+            <span style="color:var(--primary);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px">Preview</span>
+          </div>
+        </div>
+        <p style="font-size:12px;color:var(--text-muted);font-weight:500">Provide a high-quality image URL to showcase your find</p>
+      </div>
+
+      <!-- Form Sections -->
+      <div class="form-group">
+        <label>Display Name</label>
+        <input id="prod-name" placeholder="e.g. Rare 1994 Grateful Dead Tie-Dye Tee">
+      </div>
+
+      <div style="height:20px"></div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Price (₹)</label>
+          <input id="prod-price" type="number" placeholder="999">
+        </div>
+        <div class="form-group">
+          <label>Original Value (₹)</label>
+          <input id="prod-orig" type="number" placeholder="2499">
+        </div>
+      </div>
+
+      <div style="height:20px"></div>
+
+      <div class="form-group">
+        <label>Description & History</label>
+        <textarea id="prod-desc" placeholder="Tell the story of this piece, including condition details..."></textarea>
+      </div>
+
+      <div style="margin:30px 0;border-top:1px solid #f0f0f0"></div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Gender Scope</label>
+          <select id="prod-gender">
+            <option value="men">Menswear</option>
+            <option value="women">Womenswear</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Item Category</label>
+          <select id="prod-cat">
+            <option value="tshirts">T-Shirts</option>
+            <option value="hoodies">Hoodies</option>
+            <option value="jackets">Jackets</option>
+            <option value="bottoms">Bottoms</option>
+            <option value="dresses">Dresses</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="height:20px"></div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Brand Reference</label>
+          <input id="prod-brand" placeholder="e.g. Nike, Levis, Carhartt">
+        </div>
+        <div class="form-group">
+          <label>Condition Status</label>
+          <select id="prod-cond">
+            <option value="New">Brand New / Deadstock</option>
+            <option value="Like New">Like New / Mint</option>
+            <option value="Good">Good / Gently Worn</option>
+            <option value="Fair">Fair / Character Wear</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="height:20px"></div>
+
+      <div class="form-group">
+        <label>Direct Image Link</label>
+        <input id="prod-img" placeholder="https://images.unsplash.com/..." oninput="document.getElementById('prod-img-preview').innerHTML='<img src=\''+this.value+'\' style=\'width:100%;height:100%;object-fit:cover;animation:fadeIn 0.5s ease\'>'">
+        <p style="margin-top:8px;font-size:11px;color:var(--text-muted)">Tip: Use high-res images from Unsplash or Pinterest for better sales.</p>
+      </div>
+
+      <div style="height:40px"></div>
+
+      <button onclick="doAddProduct()" class="admin-btn-premium" style="width:100%;padding:22px;border-radius:20px;font-size:16px;letter-spacing:1px;background:linear-gradient(135deg, #1a1a1a, #333);box-shadow:0 15px 35px rgba(0,0,0,0.2)">
+        PUBLISH LISTING 🚀
+      </button>
+      
+      <div style="text-align:center;margin-top:24px">
+        <a onclick="goTo('account')" style="color:var(--text-muted);font-size:13px;cursor:pointer;text-decoration:none;font-weight:600;display:inline-flex;align-items:center;gap:6px">
+          <span>←</span> Back to Account
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>

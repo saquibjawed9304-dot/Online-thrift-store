@@ -1,0 +1,91 @@
+<div id="page-payment" class="page">
+  <div class="page-title">Secure Payment 💳</div>
+  <div style="max-width:680px;margin:0 auto;padding:16px 30px 50px">
+    <!-- Order Summary -->
+    <div style="background:#f9f6f2;border:1px solid rgba(200,169,110,.3);border-radius:12px;padding:18px;margin-bottom:24px">
+      <h3 style="font-family:'Playfair Display',serif;color:#c8a96e;margin-bottom:12px;font-size:18px">Order Summary</h3>
+      <div id="payment-items-list" style="font-size:13px;color:#555;line-height:2.2"></div>
+      <div style="border-top:1px solid #ddd;margin-top:10px;padding-top:10px;display:flex;justify-content:space-between">
+        <span style="font-weight:600;font-size:15px">Total</span>
+        <span id="payment-total" style="font-size:20px;font-weight:700;color:#c8a96e">₹0</span>
+      </div>
+    </div>
+    <!-- Delivery Address Summary -->
+    <div id="delivery-summary" style="background:#fff;border:1px solid #eee;border-radius:10px;padding:14px;margin-bottom:20px;font-size:13px;color:#555">
+      <span style="font-weight:600;color:#1a1a1a">📦 Delivering to: </span>
+      <span id="delivery-address-text"></span>
+      <a onclick="goTo('address')" style="color:#c8a96e;cursor:pointer;font-size:12px;margin-left:8px;font-weight:600">Change</a>
+    </div>
+    <!-- Payment Methods -->
+    <h3 style="margin-bottom:14px;font-size:16px;font-weight:600">Choose Payment Method</h3>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px">
+      <button onclick="selPay('upi')" id="btn-upi" class="pay-method-btn active-pay">📱 UPI / QR</button>
+      <button onclick="selPay('card')" id="btn-card" class="pay-method-btn">💳 Card</button>
+      <button onclick="selPay('netbanking')" id="btn-nb" class="pay-method-btn">🏦 Net Banking</button>
+      <button onclick="selPay('cod')" id="btn-cod" class="pay-method-btn">💵 Cash on Delivery</button>
+    </div>
+    <!-- UPI Section -->
+    <div id="section-upi" class="pay-section">
+      <div style="display:flex;gap:28px;flex-wrap:wrap;align-items:flex-start">
+        <div style="text-align:center">
+          <p style="font-weight:600;margin-bottom:8px;font-size:13px">Scan with any UPI app</p>
+          <div style="border:3px solid #00baf2;border-radius:14px;padding:10px;display:inline-block;background:linear-gradient(180deg,#00baf2,#003f8a)">
+            <div style="background:#fff;border-radius:8px;padding:10px">
+              <div style="display:flex;align-items:center;gap:6px;justify-content:center;margin-bottom:6px">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Paytm_logo.png/320px-Paytm_logo.png" style="height:18px">
+                <span style="color:#e05252;font-size:16px">♥</span>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/UPI-Logo-vector.svg/320px-UPI-Logo-vector.svg.png" style="height:18px">
+              </div>
+              <!-- Professional QR Placeholder -->
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=upi://pay?pa=9359699646@ptsbi%26pn=ThriftHub%26cu=INR" 
+                   style="width:160px;height:160px;margin-bottom:10px;box-shadow:0 10px 30px rgba(0,0,0,.1);border-radius:12px"
+                   alt="UPI QR Code">
+              <p style="font-size:12px;color:#888;font-weight:600">Merchant: THRIFTHUB VINTAGE</p>
+              <p style="font-size:10px;color:#00baf2;margin-top:4px;font-weight:700">9359699646@ptsbi</p>
+            </div>
+          </div>
+        </div>
+        <div style="flex:1;min-width:240px">
+          <p style="font-weight:600;margin-bottom:10px;font-size:13px">Or Enter UPI ID</p>
+          <div style="display:flex;gap:8px">
+            <input id="upi-id-input" placeholder="e.g. mobile@paytm" style="flex:1;padding:12px;border:1.5px solid #ddd;border-radius:8px">
+            <button onclick="notify('UPI Link Sent! Please check your UPI app.')" style="padding:0 20px;background:#00baf2;border-radius:8px;font-size:14px">Verify</button>
+          </div>
+          <div style="margin-top:16px;background:#eefbff;padding:12px;border-radius:8px;font-size:12px;color:#007ea4;line-height:1.5">
+            <strong>How it works:</strong>
+            <ol style="margin:6px 0 0 16px">
+              <li>Open your favorite UPI app</li>
+              <li>Scan the QR or enter the ID</li>
+              <li>Complete the payment of <span id="qr-amount" class="final-total-text" style="font-weight:700">₹0</span></li>
+              <li>Order will be confirmed automatically</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Card Section -->
+    <div id="section-card" class="pay-section" style="display:none">
+      <p style="font-size:13px;color:#666;margin-bottom:12px">Total to pay: <strong id="card-amt" style="color:#c8a96e">₹0</strong></p>
+      <div class="input-group"><label>Card Number</label><input placeholder="XXXX XXXX XXXX XXXX" oninput="fmtCard(this)"></div>
+      <div style="display:flex;gap:12px">
+        <div class="input-group" style="flex:1"><label>Expiry</label><input placeholder="MM/YY" oninput="fmtExp(this)"></div>
+        <div class="input-group" style="flex:1"><label>CVV</label><input placeholder="***" maxlength="3"></div>
+      </div>
+    </div>
+    <!-- Net Banking / COD generic placeholders -->
+    <div id="section-netbanking" class="pay-section" style="display:none">
+      <p style="font-size:13px;color:#666;margin-bottom:12px">Select your bank to pay <strong id="nb-amt" style="color:#c8a96e">₹0</strong></p>
+      <select style="width:100%;padding:12px;border-radius:8px;border:1.5px solid #ddd">
+        <option>Select Bank</option>
+        <option>State Bank of India</option>
+        <option>HDFC Bank</option>
+        <option>ICICI Bank</option>
+        <option>Axis Bank</option>
+      </select>
+    </div>
+    <div id="section-cod" class="pay-section" style="display:none">
+      <p style="font-size:13px;color:#666">Pay ₹40 extra for Cash on Delivery. Total: <span id="cod-total-text">₹0</span></p>
+    </div>
+    <button class="pay-final-btn" onclick="doPlaceOrder()">Pay & Place Order</button>
+  </div>
+</div>
