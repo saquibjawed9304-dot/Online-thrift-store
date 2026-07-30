@@ -17,14 +17,8 @@ ThriftHub is a premium, beginner-friendly thrift store web application designed 
     ```bash
     npm install
     ```
-3.  **Environment Setup**:
-    Create a `.env` file in the root directory and add your MongoDB connection string:
-    ```env
-    PORT=5000
-    MONGO_URI=your_mongodb_uri_here
-    JWT_SECRET=your_jwt_secret_here
-    ```
-4.  **Run the application**:
+
+3.  **Run the application**:
     ```bash
     npm run dev
     ```
